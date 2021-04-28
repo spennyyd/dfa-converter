@@ -1,0 +1,36 @@
+
+
+Welcome to the regular expression grammar checker!
+
+The current valid alphabet is { 0, 1, +, *, (, ) }
+These are the grammar rules: 
+
+Start --> Expression <end of line>
+Expression --> Expression + Term
+Term --> Term Factor
+Term --> Factor
+Factor --> 0
+Factor --> 1
+Factor --> Factor *
+Factor --> ( Expression )
+----------------------------------
+Please enter an expression (type "end" to quit): 
+States	0	1	e
+1	[ ]	[ 1 ]	[ ]
+2	[ ]	[ ]	[ 4 ]
+3	[ 3 ]	[ ]	[ ]
+4	[ ]	[ ]	[ 13 ]
+5	[ ]	[ ]	[ 2 ]
+6	[ ]	[ ]	[ 0 ]
+7	[ 7 ]	[ ]	[ ]
+8	[ ]	[ ]	[ 10 ]
+9	[ 9 ]	[ ]	[ ]
+10	[ ]	[ ]	[ 13 ]
+11	[ ]	[ ]	[ 8 ]
+12	[ ]	[ ]	[ 6 ]
+13	[ ]	[ ]	[ 5 11 ]
+14	[ ]	[ ]	[ ]
+Start State: 12
+End State: 13
+Valid:		((10)+(00))
+Please enter an expression (type "end" to quit): 
